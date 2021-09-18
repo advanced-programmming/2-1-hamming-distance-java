@@ -10,9 +10,11 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         List<String> stringList = new ArrayList<>();
 
-        while(scanner.hasNext())
-            stringList.add(scanner.nextLine());
-
+        while(scanner.hasNext()) {
+            String value = scanner.nextLine();
+            if ("0".equals(value)) break;
+            stringList.add(value);
+        }
         int minimum = 9999;
         for(int i = 0; i < stringList.size(); i++)
             for (int j = (i + 1); j < stringList.size(); j++) {
